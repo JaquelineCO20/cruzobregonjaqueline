@@ -7,7 +7,7 @@ La representación básica del modelo de cajas se basa en varios conceptos impor
 - **Relleno** ***(Padding) :***  El relleno es espacio en blanco alrededor del contenido; es posible controlar su tamaño usando la propiedad padding y otras propiedades relacionadas.
 - **Contenido** ***(content) :*** El área donde se muestra el contenido, cuyo tamaño puede cambiarse utilizando propiedades como width y height.
 
-![Modelo de cajas](https://www.google.com/url?sa=i&url=https%3A%2F%2Flenguajecss.com%2Fcss%2Fmodelo-de-cajas%2Fque-es%2F&psig=AOvVaw16jQtO-iV-xwy6mvIyS4uN&ust=1693263902689000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCLCSk_j5_YADFQAAAAAdAAAAABAF)
+![Alt text](image-2.png)
 
 ## Dimensiones (Ancho y Alto)
 Para dar tamaños específicos a los diferentes elementos de un documento HTML, necesitaremos asignarles valores a las propiedades width (ancho) y height (alto):
