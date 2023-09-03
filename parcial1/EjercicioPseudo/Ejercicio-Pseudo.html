@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-selectores</title>
+    <link rel="stylesheet" href="Estilos.css">
+</head>
+<body>
+    <h1>APRENDIENDO A UTILIZAR PSEUDO-SELECTORES</h1>
+    <h2 class="subtitulo">PSEUDOCLASES</h2>
+    <P>Una pseudoclase es un selector que marca los elementos que están en un estado específico, por ejemplo, los que son el primer elemento de su tipo, o aquellos por los que el cursor les pasa por encima.Tienden a actuar como si hubieras aplicado una clase en una parte determinada del documento y, a menudo, ayudan a reducir el exceso de clases y proporcionan un marcado más flexible y fácil de mantener.<br>Las pseudoclases son palabras clave que comienzan con dos puntos ":"</P>
+    <p>Ejemplo:</p>
+    <hr>
+    <p class="ejemplos">:pseudoclase-nombre</p>
+    <hr>
+    <h2 class="subtitulo">PSEUDOELEMENTO</h2>
+    <p>Los pseudoelementos se comportan de manera similar. Sin embargo, actúan como si hubieras añadido un elemento HTML totalmente nuevo en el marcado, en lugar de haber aplicado una clase nueva a los elementos presentes. Los pseudoelementos empiezan con un doble signo de dos puntos "::"</p>
+    <p>Ejemplo:</p>
+    <hr>
+    <p class="ejemplos">::pseudoelemento-nombre</p>
+    <hr>
+    <div>
+        <ol class="listas">
+            <li>Descendente</li>
+            <ol class="listas">
+                <li>Descendiente directo</li>
+                <li>Hermano adyacente</li>
+            </ol>
+            <li>Hermano general</li>
+        </ol>
+    </div>
+    <li>fuera de un div</li>
+    <hr>
+        <h3 class="sub2">SELECTOR DESCENDENTE</h3>
+        <p>Un selector descendente le da estilos a uno o más elementos que se encuentran dentro de otros elementos, sin importar la profundidad.</p>
+        <h3 class="sub2">SELECTOR DE HIJO O DESCENDIENTE DIRECTO</h3>
+        <P>Este selector es similar al selector descendiente, solo que este da estilos a un elemento que es hijo de otro elemento.
+            En el selector de hijo el elemento tiene que ser hijo directo del elemento y no va más profundo, se indica con el signo de “mayor que” ></P>
+        <h3 class="sub2">SELECTOR ADYACENTE DE HERMANO O HERMANO ADYACENTE</h3>
+        <P>El selector adyacente da estilos al elemento que sea hermano de otro elemento, es decir, que los dos tengan el mismo padre y se indica con el signo + </P>
+        <h3 class="sub2">SELECTOR GENERAL DE HERMANOS O HERMANO GENERAL</h3>
+        <P>El selector general de hermanos es totalmente igual al selector adyacente, solo que este si toma en cuenta a todos los hermanos de hijo1 y se indica con el signo ~ </P>
+    <h3>PSEUDO-CLASES</h3>
+        <ul class="listas">
+            <li> div p :descendencia: selecciona < p > si esta dentro de un < div> </li>
+            <li> div > p: descendencia directa: selecciona < p > solo si es hijo directo de < div > </li>
+            <ol>
+                <li>div + p:Hermano adyacente: selecciona < p > si esta "enseguida" del < div ></li>
+                <li>div ~ p: Hermano general: selecciona < p > si esta "después" del < div ></li>
+            </ol>
+            <li>una coma en un selector solo es un separador</li>    
+        </ul>
+    <h3>PSEUDO-ELEMENTOS</h3>
+    <table border="4">
+        <tr>
+            <td>pseudo-clase</td>
+            <td>Descripción</td>
+        </tr>
+        <tr>
+            <td>::first-line</td>
+            <td>primera linea de texto de un elemento</td>
+        </tr>
+        <tr>
+            <td>::first-letter</td>
+            <td>primera letra de la primera linea de texto de un elemento</td>
+        </tr>
+        <tr>
+            <td>::before</td>
+            <td>añade contenido al principio del documento</td>
+        </tr>
+        <tr>
+            <td>::after</td>
+            <td>añade contenido al final del documento</td>
+        </tr>
+    </table>
+</body>
+</html>
