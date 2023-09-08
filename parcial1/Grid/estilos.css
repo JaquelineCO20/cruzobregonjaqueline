@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+.contenedor{
+    height:100vh;
+    width: 100vw;
+    /* flex-direction:row;
+    flex-wrap:nowrap; */
+    background-color:antiquewhite;
+    display:grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 25% 50% 25%;
+    justify-content:center;
+    justify-items: stretch;
+    align-items: stretch;
+    align-content: center;
+
+}
+.caja{
+    /* width:100px;
+    height: 100px; */
+    background-color:violet;
+    border: 1px solid mediumvioletred;
+    text-align: center;
+}
+
+#caja1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /* align-self:start; */
+}
