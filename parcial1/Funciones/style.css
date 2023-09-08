@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.cajas{
+    width:calc((100%/3)-20px);
+    height: 100px;
+    background-color:burlywood;
+    border: 100px solid salmon;
+    float: left;
+    margin: 10px;
+}
+
