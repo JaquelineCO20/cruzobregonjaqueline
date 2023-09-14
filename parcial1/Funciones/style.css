@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    margin: 0;
+    margin: 15px;
     padding: 0;
 }
 
@@ -10,6 +10,18 @@
     background-color:burlywood;
     border: 100px solid salmon;
     float: left;
-    margin: 10px;
+    margin: 25px;
 }
-
+#C2{
+    border-color: blueviolet;
+}
+#C1:hover{
+    transform: rotate(45deg);
+    transform:translatey(150px);
+}
+#C2:hover{
+    transform: translatex(500px);
+}
+#C3:hover{
+    transform: scale(4,8);
+}
