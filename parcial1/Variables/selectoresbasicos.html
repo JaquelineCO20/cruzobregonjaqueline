@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores Básicos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <label for="tema">Tema</label>
+    <input id="tema" type="checkbox">
+    <div id="contenedor">
+        <h1>APRENDIENDO A UTILIZAR LOS SELECTORES BÁSICOS EN HTML Y CSS</h1>
+    <img src="https://www.atatus.com/blog/content/images/size/w960/2023/01/css-selectors-1.png" alt="Selectores" title="Selectores basicos" width="900px" height="400px">
+    <h2 class="subtitulos">SELECTORES</h2>
+    <p>un selector CSS es una referencia a uno o varios elementos HTML, escrito generalmente desde código CSS (también pueden utilizarse desde ciertos lugares en Javascript). Es una forma rápida y cómoda de hacer referencia a elementos individuales o grupos de elementos, para posteriormente darle estilo.</p>
+    <p>Algunos tipos de selectores son: </p>
+    <ol>
+        <li>div : Selecciona por etiqueta. Aplica estilos a todas las etiquetas que coincidan</li>
+        <li>#page :Selecciona por ID. Aplica estilos al elemento que tenga ese ID. Debería ser un único elemento </li>
+        <li>.primary : selecciona por clases. Aplica estilos a los elementos que tengan dicha CLASS. Pueden existir varias</li>
+        <li>button.primary : mixto. Selecciona multiples criterios. En este caso, por elemento y por clase</li>
+    </ol>
+    <h2 id="I1" class="subtitulos">SELECTOR POR ETIQUETA</h2>
+    <p>El selector por etiqueta selecciona por etiquetas y aplica estilos a todas las etiquetas que coincidan</p>
+    <div>
+        <p>Este texto deberá ser de color rosa</p>
+    </div>  
+    <h2 class="subtitulos">SELECTORES POR ID(ÚNICOS)</h2>
+    <p id="p1"> el # se refiere al id</p>
+    <p id="p2">Todas las etiquetas HTML pueden tener un atributo id con un valor concreto. Este valor será el nombre que le daremos a la etiqueta. Un buen símil con la vida real es la de un DNI o tarjeta de identificación, ya que la particularidad clave de los ID es que no se deben repetir, es decir, que sólo debe haber una etiqueta con el mismo ID por documento. Por ejemplo:</p>
+    <p id="p3">Este texto tiene un id=p3 y con un selector tendrá que cambiar la fuente,tamaño, aparecer en italica y de color verde</p>    
+    <h2 id="S1" class="subtitulos">SELECTOR POR CLASES</h2>
+    <p>se utiliza el . para referirse a una clase seguido del nombre de esta</p>
+    <p>Aplica estilos a los elementos que tengan dicha CLASE</p>
+</div>
+</body>
+</html> 
