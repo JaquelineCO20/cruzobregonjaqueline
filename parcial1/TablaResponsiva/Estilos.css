@@ -1,0 +1,60 @@
+body{
+    margin: auto;
+    max-width: 1250px;
+    background-color: bisque;
+}
+h1{
+    text-align: center;
+    background-color:#D3A1A3;   
+}
+.ejemplos{
+    text-align: center;
+    background-color: darkkhaki;
+}
+.subtitulo{
+    background-color: cadetblue;
+}
+.sub2{
+    background-color:#FFFE99;
+}
+table{
+    text-align: center;
+}
+
+/*selector de descendencia*/
+div li{
+    background-color: chartreuse;
+}
+
+/* selector de hijo (descendiente directo)*/
+ul > li{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.listas>li{
+    text-decoration:underline;
+    font-size: xx-large;
+}
+
+/* selector hermano adyacente*/
+.listas+*{
+    color:crimson;
+    font-size: 40px;
+}
+table,thead,tbody,tr,th,td{
+    border:4px solid #CD9BCF;
+    border-collapse: collapse;
+}
+@media screen and (max-width:600px){
+    table,thead,tbody,tr,th,td{
+        display:block;
+    }
+    thead{
+        display:none;
+    }
+    td{
+        padding-left: 50px;
+    }
+}

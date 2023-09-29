@@ -41,7 +41,7 @@ ol.listado #li2 {
   background-color: #BFDBDE;
 }
 input:checked + div#contenido {
-  color: var(--color);
+  color: pink;
   background-color: aqua;
 }
 div#contenido {
