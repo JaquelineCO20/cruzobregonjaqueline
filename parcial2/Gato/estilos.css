@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+.contenedor{
+    height:100vh;
+    width: 100vw;
+    /* flex-direction:row;
+    flex-wrap:nowrap; */
+    background-color:antiquewhite;
+    display:grid;
+    grid-template-columns: 25% 25% 25%;
+    grid-template-rows: 25% 25% 25%;
+    justify-content:center;
+    justify-items: stretch;
+    align-items:stretch;
+    align-content: center;
+
+}
+.caja{
+    /* width:100px;
+    height: 100px; */
+    background-color:violet;
+    border: 4px solid mediumvioletred;
+    text-align:center;
+    font-size: 40px;
+    line-height:5cm;
+}
+
+.caja1{
+    align-self:center;
+    justify-self: center;
+}
