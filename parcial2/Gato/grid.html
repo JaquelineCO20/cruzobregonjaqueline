@@ -8,16 +8,18 @@
 </head>
 <body>
     <div class="contenedor" id="cont">
-        <div class="caja" id="caja1">caja1</div>
-        <div class="caja" id="caja2">caja2</div>
-        <div class="caja" id="caja3">caja3</div>
-        <div class="caja" id="caja4">caja4</div>
-        <div class="caja" id="caja5">caja5</div>
-        <div class="caja" id="caja6">caja6</div>
-        <div class="caja" id="caja7">caja7</div>
-        <div class="caja" id="caja8">caja8</div>
-        <div class="caja" id="caja9">caja9</div>
-        <div><button id="btn" type="button">Limpiar</button>
+        <div class="caja" id="caja1"></div>
+        <div class="caja" id="caja2"></div>
+        <div class="caja" id="caja3"></div>
+        <div class="caja" id="caja4"></div>
+        <div class="caja" id="caja5"></div>
+        <div class="caja" id="caja6"></div>
+        <div class="caja" id="caja7"></div>
+        <div class="caja" id="caja8"></div>
+        <div class="caja" id="caja9"></div>
+        <div id="caja10"></div>
+        <div id="caja11"><button id="btn" type="button">Limpiar</button>
+        <div id="caja12"></div>        
         </div>  
 </body>
 <script>
@@ -26,9 +28,12 @@
     let estado="Jugador1";
     document.querySelectorAll(".caja").forEach(caja => {
         caja.addEventListener("click", function (e) {
-            e.target.style.backgroundImage = estado === "Jugador1" ? x : o;
-            e.target.innerHTML = ""; // Elimina cualquier contenido previo
+            if(!caja.classList.contains("seleccionada")){ //verifica si la caja ya se esta seleccionada
+            caja.style.backgroundImage = estado === "Jugador1" ? x : o;
+            caja.innerHTML = ""; // Elimina cualquier contenido previo
+            caja.classList.add("seleccionada");
             estado = estado === "Jugador1" ? "Jugador2" : "Jugador1";
+            }
         });
     });
 /* document.querySelectorAll(".contenedor");
@@ -40,6 +45,7 @@
         let cajas = document.querySelectorAll(".caja");
         cajas.forEach(caja => {
             caja.style.backgroundImage = ""; // Elimina el fondo de imagen
+            caja.classList.remove("seleccionada");
         });
     });
 </script>
