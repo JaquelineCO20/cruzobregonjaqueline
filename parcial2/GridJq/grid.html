@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="contenedor" id="cont">
+        <div class="caja" id="caja1">caja1</div>
+        <div class="caja" id="caja2">caja2</div>
+        <div class="caja" id="caja3">caja3</div>
+        <div class="caja" id="caja4">caja4</div>
+        <div class="caja" id="caja5">caja5</div>
+        <div class="caja" id="caja6">caja6</div>
+        <div class="caja" id="caja7">caja7</div>
+        <div class="caja" id="caja8">caja8</div>
+        <div class="caja" id="caja9">caja9</div>
+        <div class="caja1"><button id="btnList" type="button">Limpiar</button></div>
+        </div>  
+</body>
+<script>
+   /* window.onload=function(){
+    var banderaXO="X";
+    document.getElementById("cont").addEventListener("click",function(e){  /* console.log(e.target.id);*/
+    /*    if(document.getElementById(e.target.id).innerText=" "){
+            if(banderaXO=="X"){banderaXO="O"}else{banderaXO=="O"}
+        document.getElementById(e.target.id).innerText="X";
+        }
+    })}
+
+    /*document.getElementById("btnList").addEventListener("click",function(){
+        let cajas=document.getElementsByClassName("caja1");
+        for(const elemento of caja){
+            elemento.innerText=" ";
+        }
+    })*/
+    
+    $('document').ready(function(){
+        var XO="X";
+        $("#cont").click(function(e){
+            if($(e.target).text()==""){
+                if(XO=="X") {XO="O"} else {XO="X"}
+/* console.log("click");
+            console.log(e);
+            console.log(e.target.id);*/
+            $(e.target).text(XO);
+            }
+        })
+    })
+</script>
+</html>
