@@ -17,23 +17,30 @@
         <div class="caja" id="caja7">caja7</div>
         <div class="caja" id="caja8">caja8</div>
         <div class="caja" id="caja9">caja9</div>
-        <div class="caja1"><button id="btnList" type="button">Limpiar</button></div>
+        <div><button id="btn" type="button">Limpiar</button>
         </div>  
 </body>
 <script>
-    var banderaXO="X";
+    const x= "url('./Imagenes/x.jpg')";
+    const o="url('./Imagenes/esfera.jpg')";
+    let estado="Jugador1";
+    document.querySelectorAll(".caja").forEach(caja => {
+        caja.addEventListener("click", function (e) {
+            e.target.style.backgroundImage = estado === "Jugador1" ? x : o;
+            e.target.innerHTML = ""; // Elimina cualquier contenido previo
+            estado = estado === "Jugador1" ? "Jugador2" : "Jugador1";
+        });
+    });
+/* document.querySelectorAll(".contenedor");
     document.getElementById("cont").addEventListener("click",function(e){
-       /* console.log(e.target.id);*/
-        if(document.getElementById(e.target.id).innerText=" "){
-            if(banderaXO=="X"){banderaXO="O"}else{banderaXO="X"}
-        document.getElementById(e.target.id).innerText="X";
-        }
-    })
-    document.getElementById("btnList").addEventListener("click",function(){
-        let cajas=document.getElementsByClassName("caja1");
-        for(const elemento of caja){
-            elemento.innerText=" ";
-        }
-    })
+        document.getElementById(e.target.id).innerText=estado==="Jugador1" ? x : o;
+        estado=estado==="Jugador1" ? "Jugador2" : "Jugador1";
+    });*/
+    document.getElementById("btn").addEventListener("click", function () {
+        let cajas = document.querySelectorAll(".caja");
+        cajas.forEach(caja => {
+            caja.style.backgroundImage = ""; // Elimina el fondo de imagen
+        });
+    });
 </script>
 </html>
