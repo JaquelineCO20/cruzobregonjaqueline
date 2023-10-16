@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+.contenedor{
+    height:100vh;
+    width: 100vw;
+    /* flex-direction:row;
+    flex-wrap:nowrap; */
+    background-color:antiquewhite;
+    display:grid;
+    grid-template-columns: 25% 25% 25%;
+    grid-template-rows: 25% 25% 25%;
+    justify-content:center;
+    justify-items: stretch;
+    align-items:stretch;
+    align-content: center;
+}
+.caja{
+    background-color:white;
+    border: 2px solid #DAAADB;
+    text-align:center;
+    font-size: 40px;
+    line-height:5cm;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.caja1{
+    align-self:center;
+    justify-self: center;
+}
+
+#btn {
+    padding: 10px 20px;
+    font-size: 24px;
+    margin-top: 20px;
+    background-color:deeppink;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#btn:hover {
+    background-color: rgb(107, 52, 174);
+}
+
+#caja11{
+    text-align: center;
+}
+
+.ganador{
+    background-color:#ED0C90;
+}
+
+dialog{
+    text-align: center;
+    min-width: 30%;
+    background-color: #E7D8E7;
+    padding: 5rem;
+    border: unset;
+    margin: auto;
+}
+dialog button .btnconf{
+    font-size: large;
+    margin-top: 40px;
+}
+
+dialog::backdrop{
+    backdrop-filter:blur(3px);
+}
