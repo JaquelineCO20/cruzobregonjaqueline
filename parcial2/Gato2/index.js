@@ -40,7 +40,7 @@ document.getElementById("btn").addEventListener("click", function () {
     function Ganador(){
         const cajas = document.querySelectorAll(".caja");
         const tablero = Array.from(cajas).map(caja => caja.style.backgroundImage);
-        console.log(tablero);
+        // console.log(tablero);
     
         // Verificar si todas las casillas están llenas
     if (!tablero.includes("") && !tablero.includes("none")) {
@@ -82,14 +82,14 @@ document.getElementById("btn").addEventListener("click", function () {
     }
     
     function gano(posicionGano){
-        console.log("GANASTE!",posicionGano);
+        // console.log("GANASTE!",posicionGano);
         const cajas = document.querySelectorAll(".caja");
         posicionGano.forEach(posicion =>{
             cajas[posicion].classList.toggle("ganador",true);
             cajas[posicion].style.pointerEvents = "none"; // Desactiva la selección en las casillas ganadoras
         })
         MostrarModal("JUEGO GANADO, EL GANADOR HA SIDO: "+estado);
-        estado="pausa";
+        estado="pausa"; 
     }
 
     function MostrarModal(texto){
@@ -101,10 +101,11 @@ document.getElementById("btn").addEventListener("click", function () {
         modal.close();
     });
     document.getElementById("btnNo").addEventListener("click",function(){
+        estado="pausa";
         modal.close();
     });
 
-    function Reiniciar(){
+    function Reiniciar(){ 
         const cajas = document.querySelectorAll(".caja");
         cajas.forEach(caja => {
         caja.style.backgroundImage = ""; 
