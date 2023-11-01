@@ -1,0 +1,28 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.header,
+.user_info{
+    font-weight: bolder;
+    display: flex;
+    gap: 10px;
+
+}
+img{
+    width: 100px;
+}
+#resultado{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-grow: 1
+}
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px dashed RGB(246,146,30);
+}
+.email{
+    font-size: 12px;
+}
