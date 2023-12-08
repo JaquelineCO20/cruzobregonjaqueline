@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.head{
+    width: 100%;
+    background-color:#AAAEEB;
+    padding: 20px;
+    margin-bottom: 55px;
+    display:flex;
+    justify-content:space-between;
+}
+#h1{
+    width: 50%;
+    justify-content:center;
+}
+.lista{
+    width: 50%;
+    display:flex;
+    justify-content:flex-end;
+    align-items:flex-end;
+}
+.items{
+    list-style: none;
+    margin-right: 10px;
+}
+#d1{
+    text-align: center;
+}
+#table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#table th,
+#table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#table th {
+    background-color: #f2f2f2;
+}
+
+#table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#table tbody tr:hover {
+    background-color: #ddd;
+}
+
+#table tbody td.operations {
+    text-align: center;
+}
+
+#table tbody button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#table tbody button:hover {
+    background-color: #45a049;
+}
+
+.head {
+    /* background-color: #333; */
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+#h1 {
+    margin: 0;
+}
+
+.lista {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.items {
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+#idBuscar, #btnBuscar, #btnEliminar {
+    margin-top: 10px;
+    padding: 8px;
+}
+
+#d1 {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    border: none;
+    margin: 10px 0;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+#btnEnviar {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+#btnEnviar:hover {
+    background-color: #45a049;
+}
