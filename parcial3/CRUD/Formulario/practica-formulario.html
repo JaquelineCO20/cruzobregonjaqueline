@@ -17,10 +17,12 @@
     <header class="head">
         <h1 id="h1">HOSPITAL</h1>
         <ul class="lista">
-            <li class="items">Inicio</li>
-            <li class="items">Contacto</li>
-            <li class="items">Sobre nosotros</li>
-            <a href="http://localhost:3000/api/Pacientes/generar/pdf" download="pacientes.pdf">Descargar PDF</a>
+            <li>
+                <a href="http://localhost:3000/api/Pacientes/generar/pdf" download="pacientes.pdf">Descargar todos los pacientes</a>
+            </li>
+            <li>
+                <a href="http://localhost:3000/api/Pacientes/generarUltimo/pdf" download="ultimoPaciente.pdf">Descargar ultimo paciente</a>
+            </li>
         </ul>
     </header>
     <main class="main">
@@ -28,7 +30,7 @@
             <article class="userActions__searchContainer">
                 <label class="label" for="search">
                     <span class="label__text">Buscar</span>
-                    <input placeholder="Ingrese el ID de algun usuario..." class="input" id="search" name="search">
+                    <input placeholder="Ingrese el ID de algun usuario..." class="input buscarInput" id="search" name="search">
                 </label>
                 <section class="userActions__actions">
                     <button class="actions__btn buscar">Buscar</button>
@@ -50,7 +52,7 @@
                     </label>
                     <label class="label" for="edad">
                         <span class="label__text">Edad</span>
-                        <input placeholder="Ej: 18" class="input" id="edad" name="edad">
+                        <input placeholder="Ej: 18" class="input" id="edad" name="edad" maxlength="3">
                     </label>
                     <fieldset class="genderField">
                         <legend>Genero</legend>
@@ -59,12 +61,13 @@
                     </fieldset>
                     <label class="label" for="search">
                         <span class="label__text">Telefono</span>
-                        <input placeholder="Ej: 867 123 4567..." class="input" id="telefono" name="telefono">
+                        <input placeholder="Ej: 867 123 4567..." class="input" id="telefono" name="telefono" maxlength="10">
                     </label>
                     <section class="buttons">
                         <button type="submit" class="actions__btn enviar">Enviar</button>
                         <button type="submit" class="actions__btn editar">Editar</button>
                         <button type="submit" class="actions__btn eliminar">Eliminar</button>
+                        <button type="submit" class="actions__btn vaciar">Limpiar</button>
                     </section>
                 </form>
             </article>
