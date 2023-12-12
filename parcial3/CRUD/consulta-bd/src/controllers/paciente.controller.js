@@ -16,9 +16,10 @@ const getPacientesID = async (req, res) => {
         const { id_paciente } = req.params;
         const connection = await getConnection();
         const result = await connection.query("SELECT id_paciente,Nombre,ApellidoP,ApellidoM,Edad,Genero,Telefono FROM paciente WHERE id_paciente=?", id_paciente);
+        if(!result || result == []) throw new Error
         res.json(result);
     } catch (error) {
-        res.status(500).send(error.message) //error del servidor
+        res.status(404).send(error.message) //error del servidor
     }
 };
 
@@ -65,8 +66,8 @@ const updatePacientes = async (req, res) => {
 const getAllUsersPdf = async (req, res) => {
     try {
         const connection = await getConnection();
-        const result = await connection.query("SELECT id_paciente, Nombre, ApellidoP, ApellidoM, Edad, Genero, Telefono FROM paciente");
-        console.log(result)
+        const result = await connection.query("SELECT id_paciente, Nombre, ApellidoP, ApellidoM, Edad, Genero, Telefono FROM paciente ORDER BY id_paciente");
+        console.log(result) 
         // Crear un nuevo documento PDF
         const pdf = new jsPDF();
         pdf.text('Lista de Pacientes', 20, 10);
@@ -98,26 +99,33 @@ const getAllUsersPdf = async (req, res) => {
     }
 };
 
-const getLastUserPdf = async (req, res) => {
+const getUserPdfById = async (req, res) => {
+    const userId = req.params.id_paciente; 
+    console.log(userId)
     try {
         const connection = await getConnection();
-        const result = await connection.query("SELECT id_paciente, Nombre, ApellidoP, ApellidoM, Edad, Genero, Telefono FROM paciente");
-        console.log(result)
+        const result = await connection.query("SELECT id_paciente, Nombre, ApellidoP, ApellidoM, Edad, Genero, Telefono FROM paciente WHERE id_paciente = ?",userId);
+
+        if (result.length === 0) {
+            res.status(404).send('Usuario no encontrado');
+            return;
+        }
+
+        const paciente = result[0];
+
         // Crear un nuevo documento PDF
         const pdf = new jsPDF();
-        pdf.text('Ultimo paciente ingresado', 20, 10);
-        const ultimoIngresado = result.pop() 
-        
-            pdf.text(`${ultimoIngresado.id_paciente} ${ultimoIngresado.Nombre} ${ultimoIngresado.ApellidoP} ${ultimoIngresado.ApellidoM}`, 20, 20);
-            // Puedes agregar más campos según tus necesidades
+        pdf.text(`Información del Paciente - ID: ${paciente.id_paciente}`, 20, 10);
+        pdf.text(`${paciente.id_paciente} ${paciente.Nombre} ${paciente.ApellidoP} ${paciente.ApellidoM}`, 20, 20);
+        // Puedes agregar más campos según tus necesidades
 
         // Guardar el PDF en el servidor
-        const pdfPath = './ultimoPaciente.pdf';
+        const pdfPath = `./paciente_${userId}.pdf`;
         pdf.save(pdfPath);
 
         // Enviar el PDF como respuesta al cliente
         res.contentType("application/pdf");
-        res.download(pdfPath, 'ultimoPaciente.pdf', (err) => {
+        res.download(pdfPath, `paciente_${userId}.pdf`, (err) => {
             if (err) {
                 console.error(err);
                 res.status(500).send(err.message);
@@ -126,10 +134,43 @@ const getLastUserPdf = async (req, res) => {
             fs.unlinkSync(pdfPath);
         });
     } catch (error) {
-        res.status(500);
-        res.send(error.message);
+        res.status(500).send(error.message);
     }
 };
+
+
+// const getLastUserPdf = async (req, res) => {
+//     try {
+//         const connection = await getConnection();
+//         const result = await connection.query("SELECT id_paciente, Nombre, ApellidoP, ApellidoM, Edad, Genero, Telefono FROM paciente ORDER BY id_paciente");
+//         console.log(result)
+//         // Crear un nuevo documento PDF
+//         const pdf = new jsPDF();
+//         pdf.text('Ultimo paciente ingresado', 20, 10);
+//         const ultimoIngresado = result.pop() 
+        
+//             pdf.text(`${ultimoIngresado.id_paciente} ${ultimoIngresado.Nombre} ${ultimoIngresado.ApellidoP} ${ultimoIngresado.ApellidoM}`, 20, 20);
+//             // Puedes agregar más campos según tus necesidades
+
+//         // Guardar el PDF en el servidor
+//         const pdfPath = './ultimoPaciente.pdf';
+//         pdf.save(pdfPath);
+
+//         // Enviar el PDF como respuesta al cliente
+//         res.contentType("application/pdf");
+//         res.download(pdfPath, 'ultimoPaciente.pdf', (err) => {
+//             if (err) {
+//                 console.error(err);
+//                 res.status(500).send(err.message);
+//             }
+//             // Eliminar el archivo después de descargar
+//             fs.unlinkSync(pdfPath);
+//         });
+//     } catch (error) {
+//         res.status(500);
+//         res.send(error.message);
+//     }
+// };
 export const methods = {
     getPacientes,
     getPacientesID,
@@ -137,5 +178,5 @@ export const methods = {
     deletePacientes,
     updatePacientes,
     getAllUsersPdf,
-    getLastUserPdf
+    getUserPdfById,
 };

@@ -20,9 +20,6 @@
             <li>
                 <a href="http://localhost:3000/api/Pacientes/generar/pdf" download="pacientes.pdf">Descargar todos los pacientes</a>
             </li>
-            <li>
-                <a href="http://localhost:3000/api/Pacientes/generarUltimo/pdf" download="ultimoPaciente.pdf">Descargar ultimo paciente</a>
-            </li>
         </ul>
     </header>
     <main class="main">
@@ -34,6 +31,7 @@
                 </label>
                 <section class="userActions__actions">
                     <button class="actions__btn buscar">Buscar</button>
+                    <button class="actions__btn buscar especifico">Descargar pdf especifico</button>
                 </section>
             </article>
             <article class="userActions__inputContainer">
@@ -52,7 +50,7 @@
                     </label>
                     <label class="label" for="edad">
                         <span class="label__text">Edad</span>
-                        <input placeholder="Ej: 18" class="input" id="edad" name="edad" maxlength="3">
+                        <input type="number" placeholder="Ej: 18" class="input" id="edad" name="edad" maxlength="3">
                     </label>
                     <fieldset class="genderField">
                         <legend>Genero</legend>
@@ -64,18 +62,18 @@
                         <input placeholder="Ej: 867 123 4567..." class="input" id="telefono" name="telefono" maxlength="10">
                     </label>
                     <section class="buttons">
-                        <button type="submit" class="actions__btn enviar">Enviar</button>
-                        <button type="submit" class="actions__btn editar">Editar</button>
-                        <button type="submit" class="actions__btn eliminar">Eliminar</button>
-                        <button type="submit" class="actions__btn vaciar">Limpiar</button>
+                        <button type="submit" class="actions__btn enviar">Agregar paciente</button>
+                        <button type="submit" class="actions__btn editar">Editar paciente</button>
+                        <button type="submit" class="actions__btn eliminar">Eliminar paciente</button>
+                        <button type="submit" class="actions__btn vaciar">Limpiar informacion</button>
                     </section>
                 </form>
             </article>
         </section>
     </main>
         
-
-    <script src="./index.js"></script>
+    <script type="module" src="./node_modules/sweetalert2/src/sweetalert2.js"></script> 
+    <script type="module" defer src="index.js"></script>
 </body>
 
 </html>
